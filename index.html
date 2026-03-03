@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Surprise ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:linear-gradient(135deg,#1a002b,#000);
+color:white;
+overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+}
+
+/* Floating Hearts */
+.heart{
+position:fixed;
+bottom:-20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-100vh);opacity:0;}
+}
+
+.section{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+}
+
+.start h1{
+font-size:30px;
+font-weight:800;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
+button{
+padding:12px 28px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#ff4e8a,#ff99cc);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 0 15px #ff4e8a;
+margin-top:20px;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.content{
+display:none;
+animation:fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 25px rgba(255,78,138,0.4);
+max-width:600px;
+width:100%;
+}
+
+.title{
+font-family:'Great Vibes',cursive;
+font-size:42px;
+color:#ff99cc;
+margin-bottom:10px;
+}
+
+img{
+width:100%;
+border-radius:15px;
+margin:15px 0;
+box-shadow:0 0 20px #ff4e8a;
+}
+
+.paragraph{
+text-align:left;
+font-size:17px;
+line-height:1.9;
+margin-top:10px;
+}
+
+.highlight{
+font-weight:800;
+color:#ff99cc;
+}
+
+.proposal{
+margin-top:30px;
+}
+
+.proposal h2{
+font-size:26px;
+font-weight:800;
+color:#ff4e8a;
+margin-bottom:15px;
+}
+
+#result{
+margin-top:20px;
+font-size:22px;
+font-weight:800;
+color:#ff99cc;
+font-family:'Great Vibes',cursive;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="section start" id="start">
+<h1>Click On This Surprise ❤️</h1>
+<button onclick="openSurprise()">Open Now</button>
+</div>
+
+<div class="section content" id="content">
+<div class="card">
+
+<div class="title">Happy Birthday ❤️</div>
+
+<img src="photo.jpg">
+
+<div class="paragraph">
+Today is not just your birthday… it is the day the most beautiful soul entered this world.  
+You didn’t just become part of my life —  
+<span class="highlight">you became my peace, my strength, and my happiness.</span>  
+Loving you feels effortless, natural, and real.  
+Every smile of yours lights up my entire world.  
+And if there’s one truth I know deeply in my heart, it is this —  
+<span class="highlight">I want every tomorrow of my life to have you beside me.</span>
+</div>
+
+<div class="proposal">
+<h2>Will You Be Mine? 💍</h2>
+<button onclick="yes()">Yes ❤️</button>
+<button onclick="no()">No 😜</button>
+</div>
+
+<div id="result"></div>
+
+</div>
+</div>
+
+<script>
+
+function openSurprise(){
+document.getElementById("start").style.display="none";
+document.getElementById("content").style.display="flex";
+startHearts();
+}
+
+function startHearts(){
+setInterval(()=>{
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+15)+"px";
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},500);
+}
+
+function yes(){
+document.getElementById("result").innerHTML=
+"Love uh my dear lovely Papa ❤️";
+}
+
+function no(){
+alert("That option was never meant for us 😉");
+}
+
+</script>
+
+</body>
+</html>
